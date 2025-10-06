@@ -1,0 +1,51 @@
+<div class="mb-4 p-4 mx-auto max-w-md">
+  <p-card header="Registro de nuevo usuario" class="text-center">
+    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()" class="flex flex-col justify-center items-center">
+
+      <p-iftalabel class="my-3 w-full">
+        <input pInputText id="username" formControlName="username" class="w-full"/>
+        <label for="username">Username</label>
+      </p-iftalabel>
+      <div class="h-6 mb-2">
+        @if (registerForm.get('username')?.invalid && registerForm.get('username')?.touched) {
+          @if (registerForm.get('username')!.hasError('required')) {
+            <small class="text-red-500">Campo requerido</small>
+          }
+          @if (registerForm.get('username')!.hasError('minlength')) {
+            <small class="text-red-500">Mínimo 6 caracteres</small>
+          }
+          @if (registerForm.get('username')!.hasError('maxlength')) {
+            <small class="text-red-500">Máximo 20 caracteres</small>
+          }
+        }
+      </div>
+
+      <p-iftalabel class="my-3 w-full">
+        <input pInputText id="email" formControlName="email" class="w-full"/>
+        <label for="email">Email</label>
+      </p-iftalabel>
+      <div class="h-6 mb-2">
+        @if(registerForm.get('email')?.invalid && registerForm.get('email')?.touched){
+          @if(registerForm.get('email')!.hasError('required')){
+            <small class="text-red-500">Campo requerido</small>
+          }
+          @if(registerForm.get('email')!.hasError('email')){
+            <small class="text-red-500">Formato de email inválido</small>
+          }
+        }
+      </div>
+
+      <p-iftalabel class="my-3 w-full">
+        <p-password formControlName="password" [feedback]="false" [fluid]="true"/>
+        <label for="password">Password</label>
+      </p-iftalabel>
+      <div class="h-6 mb-2">
+        @if (registerForm.get('password')?.invalid && registerForm.get('password')?.touched) {
+          <small class="text-red-500">Contraseña requerida (mín. 6 caracteres)</small>
+        }
+      </div>
+
+      <p-button class="my-4" type="submit" label="Registrar" [disabled]="registerForm.invalid"></p-button>
+    </form>
+  </p-card>
+</div>

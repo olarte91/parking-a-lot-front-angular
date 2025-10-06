@@ -1,0 +1,20 @@
+<section class="h-screen">
+  <div class="w-full flex justify-around items-center h-1/2">
+    <div class="w-1/2">
+      <h1 class="text-center text-5xl text-amber-400">Bienvenido a Parking-a-lot</h1>
+      <h2 class="text-center text-2xl">La aplicación para gestionar tu parqueadero</h2>
+    </div>
+    <div class="w-1/2 flex justify-evenly">
+      <login-form/>
+      <p-button (click)="register()" label="Register" severity="secondary" icon="pi pi-pen-to-square"/>
+    </div>
+  </div>
+
+  <div class="w-full h-1/2">
+    <img
+      src="https://i0.wp.com/www.reclamador.es/blog/wp-content/uploads/2019/07/danos-en-parking-publico-al-coche.jpg?fit=1200%2C630&ssl=1"
+      alt="Parking"
+      class="w-full h-full object-cover"
+    >
+  </div>
+</section>
