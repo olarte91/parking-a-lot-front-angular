@@ -9,8 +9,7 @@ import {Router} from '@angular/router';
     LoginFormComponent,
     Button
   ],
-  templateUrl: './home.html',
-  styleUrl: './home.css'
+  templateUrl: './home.html'
 })
 export default class Home {
 

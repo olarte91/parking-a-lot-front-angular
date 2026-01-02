@@ -22,8 +22,7 @@ import {User} from '../../models/user';
     IftaLabel,
     InputText
   ],
-  templateUrl: './register-user.html',
-  styleUrl: './register-user.css'
+  templateUrl: './register-user.html'
 })
 export default class RegisterUser {
 
@@ -37,7 +36,7 @@ export default class RegisterUser {
       Validators.maxLength(20)]],
       email: ['', [Validators.email,
       Validators.required]],
-      password: ['', Validators.minLength(6)]
+      password: ['', [Validators.required, Validators.minLength(6)]]
     })
   }
 

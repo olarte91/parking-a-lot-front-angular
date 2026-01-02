@@ -1,20 +1,41 @@
-<section class="h-screen">
-  <div class="w-full flex justify-around items-center h-1/2">
-    <div class="w-1/2">
-      <h1 class="text-center text-5xl text-amber-400">Bienvenido a Parking-a-lot</h1>
-      <h2 class="text-center text-2xl">La aplicación para gestionar tu parqueadero</h2>
-    </div>
-    <div class="w-1/2 flex justify-evenly">
-      <login-form/>
-      <p-button (click)="register()" label="Register" severity="secondary" icon="pi pi-pen-to-square"/>
+<section class="relative min-h-screen w-full flex items-center overflow-hidden">
+
+  <div class="absolute inset-0 z-0">
+    <img
+      src="https://i0.wp.com/www.reclamador.es/blog/wp-content/uploads/2019/07/danos-en-parking-publico-al-coche.jpg?fit=1200%2C630&ssl=1"
+      alt="Parking" class="w-full h-full object-cover">
+    <div
+      class="absolute inset-0 bg-gradient-to-b from-slate-900 via-slate-900/80 to-slate-900/40 md:bg-gradient-to-r md:from-slate-900 md:via-slate-900/80 md:to-transparent">
     </div>
   </div>
 
-  <div class="w-full h-1/2">
-    <img
-      src="https://i0.wp.com/www.reclamador.es/blog/wp-content/uploads/2019/07/danos-en-parking-publico-al-coche.jpg?fit=1200%2C630&ssl=1"
-      alt="Parking"
-      class="w-full h-full object-cover"
-    >
+  <div
+    class="relative z-10 w-full max-w-7xl mx-auto px-6 py-12 md:px-10 flex flex-col md:flex-row justify-between items-center gap-10">
+
+    <div class="w-full md:w-1/2 space-y-4 md:space-y-6 text-center md:text-left">
+
+      <h1 class="text-4xl md:text-6xl font-black text-white leading-tight">
+        Gestiona tu <br>
+        <span class="text-amber-400">Parqueadero</span>
+      </h1>
+      <p class="text-lg md:text-xl text-slate-300 max-w-md mx-auto md:mx-0">
+        Control de entradas, salidas y pagos en tiempo real. La solución definitiva.
+      </p>
+    </div>
+
+    <div
+      class="w-full max-w-[400px] bg-white/10 backdrop-blur-xl p-6 md:p-8 rounded-2xl border border-white/20 shadow-2xl">
+      <h3 class="text-white text-xl font-bold mb-6 text-center">Iniciar Sesión</h3>
+
+      <login-form />
+
+      <div class="mt-6 pt-6 border-t border-white/10">
+        <p-button (click)="register()" label="¿No tienes cuenta? Regístrate"
+          styleClass="p-button-text !text-amber-400 !no-underline w-full text-sm hover:!bg-white/10 hover:!text-amber-300 transition-all"
+          icon="pi pi-user-plus" />
+      </div>
+    </div>
+
   </div>
+
 </section>
