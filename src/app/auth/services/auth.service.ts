@@ -6,6 +6,7 @@ import {LoginRequest} from '../models/login-request';
 import {jwtDecode} from 'jwt-decode';
 import {User} from '../models/user';
 import {RegisterRequest} from '../models/register-request';
+import {RegisterResponse} from '../models/register-response';
 
 @Injectable({
   providedIn: 'root'
@@ -22,9 +23,9 @@ export class AuthService {
     return this.http.post<LoginResponse>(`${this.apiUrl}/auth/login`, loginData);
   }
 
-  register(userData: RegisterRequest): Observable<User>{
+  register(userData: RegisterRequest): Observable<RegisterResponse>{
 
-    return this.http.post<User>(`${this.apiUrl}/auth/register`, userData);
+    return this.http.post<RegisterResponse>(`${this.apiUrl}/auth/register`, userData);
   }
 
   //método par guardar el token en localStorage

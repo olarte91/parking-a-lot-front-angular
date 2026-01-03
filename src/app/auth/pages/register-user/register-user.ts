@@ -9,6 +9,9 @@ import {IftaLabel} from 'primeng/iftalabel';
 import {InputText} from 'primeng/inputtext';
 import {AuthService} from '../../services/auth.service';
 import {User} from '../../models/user';
+import {RegisterResponse} from '../../models/register-response';
+import {Router} from '@angular/router';
+import {MessageService} from 'primeng/api';
 
 @Component({
   selector: 'app-register-user',
@@ -29,7 +32,9 @@ export default class RegisterUser {
   registerForm: FormGroup;
 
   constructor(private formBuilder: FormBuilder,
-              private authService: AuthService) {
+              private authService: AuthService,
+              private router: Router,
+              private messageService: MessageService,) {
     this.registerForm = formBuilder.group({
       username: ['', [Validators.required,
         Validators.minLength(6),
@@ -45,8 +50,10 @@ export default class RegisterUser {
       const formData = this.registerForm.value;
 
       this.authService.register(formData).subscribe({
-         next: (user: User) => {
-           console.log()
+         next: (registerResponse: RegisterResponse) => {
+           this.authService.setToken(registerResponse.token);
+           this.messageService.add({severity: 'success', summary: 'Login Successfully', detail: `Bienvenido usuario ${formData.username}`, life: 3000})
+           this.router.navigate(['/dashboard']);
          }
       })
     }
