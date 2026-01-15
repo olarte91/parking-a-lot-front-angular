@@ -1,32 +1,32 @@
 import { Routes } from '@angular/router';
-import {authGuard} from './auth/guards/auth-guard';
+import { authGuard } from './core/guards/auth-guard';
 
 export const routes: Routes = [
   {
     path: 'auth',
-    loadComponent: () => import('./auth/pages/home/home'),
+    loadComponent: () => import('./features/auth/pages/home/home').then(m => m.Home),
   },
 
   {
     path: 'auth/register',
-    loadComponent: () => import('./auth/pages/register-user/register-user')
+    loadComponent: () => import('./features/auth/pages/register-user/register-user').then(m => m.RegisterUser)
   },
 
   {
     path: 'dashboard',
-    loadComponent: () => import('./dashboard/pages/dashboard/dashboard'),
+    loadComponent: () => import('./features/dashboard/pages/dashboard/dashboard').then(m => m.Dashboard),
     canActivate: [authGuard],
     children: [
       {
         path: 'welcome',
-        loadComponent: () => import('./welcome/pages/welcome/welcome')
+        loadComponent: () => import('./features/welcome/pages/welcome/welcome').then(m => m.Welcome)
       },
     ]
   },
 
   {
     path: 'error',
-    loadComponent: () => import('./error/pages/login-error/login-error')
+    loadComponent: () => import('./features/error/pages/login-error/login-error').then(m => m.LoginError)
   },
   {
     path: '**',

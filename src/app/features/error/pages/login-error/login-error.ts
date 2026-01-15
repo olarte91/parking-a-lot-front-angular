@@ -6,6 +6,6 @@ import { Component } from '@angular/core';
   templateUrl: './login-error.html',
   styleUrl: './login-error.css'
 })
-export default class LoginError {
+export class LoginError {
 
 }

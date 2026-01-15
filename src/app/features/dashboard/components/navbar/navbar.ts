@@ -1,9 +1,9 @@
-import { Component } from '@angular/core';
-import {Router, RouterLink} from '@angular/router';
-import {Menu} from 'primeng/menu';
-import {Button} from 'primeng/button';
-import {MenuItem} from 'primeng/api';
-import {AuthService} from '../../../auth/services/auth.service';
+import { Component, OnInit } from '@angular/core';
+import { Router, RouterLink } from '@angular/router';
+import { Menu } from 'primeng/menu';
+import { Button } from 'primeng/button';
+import { MenuItem } from 'primeng/api';
+import { AuthService } from '@core/services/auth.service';
 
 @Component({
   selector: 'app-navbar',
@@ -12,13 +12,12 @@ import {AuthService} from '../../../auth/services/auth.service';
     Menu,
     Button,
   ],
-  templateUrl: './navbar.html',
-  styleUrl: './navbar.css'
+  templateUrl: './navbar.html'
 })
-export class Navbar {
+export class Navbar implements OnInit {
 
   constructor(private router: Router,
-              private authService: AuthService) {
+    private authService: AuthService) {
   }
 
   items: MenuItem[] | undefined;
@@ -40,7 +39,7 @@ export class Navbar {
     ];
   }
 
-  logout(){
+  logout() {
     this.authService.logout();
     this.router.navigate(['auth']);
   }

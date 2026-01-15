@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import {Navbar} from '../../components/navbar/navbar';
-import {RouterOutlet} from '@angular/router';
+import { Navbar } from '../../components/navbar/navbar';
+import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-dashboard',
@@ -11,6 +11,6 @@ import {RouterOutlet} from '@angular/router';
   templateUrl: './dashboard.html',
   styleUrl: './dashboard.css'
 })
-export default class Dashboard {
+export class Dashboard {
 
 }

@@ -1,10 +1,10 @@
-import { Component } from '@angular/core';
-import {Menu} from 'primeng/menu';
-import {MenuItem} from 'primeng/api';
-import {Menubar} from 'primeng/menubar';
-import {Avatar} from 'primeng/avatar';
-import {Badge} from 'primeng/badge';
-import {NgClass} from '@angular/common';
+import { Component, OnInit } from '@angular/core';
+import { Menu } from 'primeng/menu';
+import { MenuItem } from 'primeng/api';
+import { Menubar } from 'primeng/menubar';
+import { Avatar } from 'primeng/avatar';
+import { Badge } from 'primeng/badge';
+import { NgClass } from '@angular/common';
 
 @Component({
   selector: 'app-welcome',
@@ -17,7 +17,7 @@ import {NgClass} from '@angular/common';
   templateUrl: './welcome.html',
   styleUrl: './welcome.css'
 })
-export default class Welcome {
+export class Welcome implements OnInit {
 
   items: MenuItem[] | undefined;
 
