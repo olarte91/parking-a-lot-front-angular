@@ -4,7 +4,7 @@
         <p>
             <strong>Estado:</strong>
             <span [style.color]="parkingSpace().status === 'AVAILABLE' ? 'green' : 'red'">
-                {{ parkingSpace().status }}
+                {{ parkingSpace().status | parkingStatus}}
             </span>
         </p>
     </div>
