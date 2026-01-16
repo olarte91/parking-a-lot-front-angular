@@ -14,8 +14,7 @@ import { NgClass } from '@angular/common';
     Badge,
     NgClass
   ],
-  templateUrl: './welcome.html',
-  styleUrl: './welcome.css'
+  templateUrl: './welcome.html'
 })
 export class Welcome implements OnInit {
 

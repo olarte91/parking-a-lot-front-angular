@@ -3,13 +3,5 @@
 
   <main class="flex-1 p-6 ml-80">
     <router-outlet />
-    <!-- dashboard.html -->
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 p-4">
-      @for (space of sortedParkingSpaces(); track space.id) {
-      <parking-space-card [parkingSpace]="space" />
-      } @empty {
-      <p>No hay espacios de parqueo disponibles.</p>
-      }
-    </div>
   </main>
 </div>

@@ -36,6 +36,11 @@ export class Sidebar {
       icon: 'pi pi-car',
     },
     {
+      label: 'Reportes',
+      routerLink: '/dashboard/welcome',
+      icon: 'pi pi-chart-bar'
+    },
+    {
       label: 'Cerrar sesión',
       icon: 'pi pi-sign-out',
       command: () => {

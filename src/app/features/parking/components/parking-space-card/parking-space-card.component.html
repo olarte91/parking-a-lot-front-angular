@@ -3,7 +3,8 @@
         <p><strong>Tipo:</strong> {{ parkingSpace().type }}</p>
         <p>
             <strong>Estado:</strong>
-            <span [style.color]="parkingSpace().status === 'AVAILABLE' ? 'green' : 'red'">
+            <span
+                [style.color]="parkingSpace().status === 'AVAILABLE' ? 'green' : parkingSpace().status === 'OCCUPIED' ? 'red' : 'yellow'">
                 {{ parkingSpace().status | parkingStatus}}
             </span>
         </p>
