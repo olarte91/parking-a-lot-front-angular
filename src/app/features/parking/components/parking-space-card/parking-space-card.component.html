@@ -1,0 +1,11 @@
+<p-card [header]="'Número ' + parkingSpace().number">
+    <div class="flex flex-col gap-2">
+        <p><strong>Tipo:</strong> {{ parkingSpace().type }}</p>
+        <p>
+            <strong>Estado:</strong>
+            <span [style.color]="parkingSpace().status === 'AVAILABLE' ? 'green' : 'red'">
+                {{ parkingSpace().status }}
+            </span>
+        </p>
+    </div>
+</p-card>
