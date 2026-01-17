@@ -3,7 +3,7 @@ import { environment } from '@env/environment.development';
 import { HttpClient } from '@angular/common/http';
 import { inject } from '@angular/core';
 import { Observable } from 'rxjs';
-import { ParkingSpace } from './models/parking-space.model';
+import { ParkingSpace } from '../models/parking-space.model';
 
 @Injectable({
   providedIn: 'root'

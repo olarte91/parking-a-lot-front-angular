@@ -1,6 +1,6 @@
 import { Component, computed, inject, OnInit, signal } from "@angular/core";
 import { ParkingSpace } from "@features/parking/models/parking-space.model";
-import { ParkingService } from "@features/parking/parking.service";
+import { ParkingService } from "@features/parking/services/parking.service";
 import { ParkingSpaceCardComponent } from "@features/parking/components/parking-space-card/parking-space-card.component";
 
 @Component({

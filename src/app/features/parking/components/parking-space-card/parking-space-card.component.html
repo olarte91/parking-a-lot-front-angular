@@ -1,12 +1,22 @@
-<p-card [header]="'Número ' + parkingSpace().number">
-    <div class="flex flex-col gap-2">
-        <p><strong>Tipo:</strong> {{ parkingSpace().type }}</p>
-        <p>
-            <strong>Estado:</strong>
-            <span
-                [style.color]="parkingSpace().status === 'AVAILABLE' ? 'green' : parkingSpace().status === 'OCCUPIED' ? 'red' : 'yellow'">
-                {{ parkingSpace().status | parkingStatus}}
-            </span>
-        </p>
+<div class="w-full h-auto bg-stone-900 flex gap-2 border-2 border-stone-700 p-2 rounded-lg ">
+    <div class="w-1/2 flex flex-col text-center p-2">
+        <span class="text-6xl font-bold mb-2" [class]="getNumberColor()">{{parkingSpace().number}}</span>
+        <span class="text-xl font-bold">{{parkingSpace().type}}</span>
     </div>
-</p-card>
+    <div class="w-1/2 flex flex-col items-center justify-center">
+        <div class="text-center p-4">
+            @if(parkingSpace().status === 'AVAILABLE' || parkingSpace().status === 'MAINTENANCE'){
+            <span class="text-4xl font-bold">---</span>
+            }
+            <span class="text-4xl font-bold"></span>
+        </div>
+        <div class="flex gap-2 mb-4">
+            <p-button label="Ingreso" severity="success" [raised]="parkingSpace().status === 'AVAILABLE'"
+                [text]="parkingSpace().status !== 'AVAILABLE'"
+                [disabled]="parkingSpace().status === 'MAINTENANCE' || parkingSpace().status !== 'AVAILABLE'" />
+            <p-button label="Salida" severity="danger" [raised]="parkingSpace().status === 'OCCUPIED'"
+                [text]="parkingSpace().status !== 'OCCUPIED'"
+                [disabled]="parkingSpace().status === 'MAINTENANCE' || parkingSpace().status !== 'OCCUPIED'" />
+        </div>
+    </div>
+</div>
