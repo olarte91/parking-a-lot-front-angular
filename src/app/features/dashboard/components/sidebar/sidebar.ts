@@ -1,19 +1,20 @@
-import { Component, inject, OnInit } from '@angular/core';
-import { Router, RouterLink } from '@angular/router';
+import { Component, inject } from '@angular/core';
+import { Router } from '@angular/router';
 import { Menu } from 'primeng/menu';
-import { Button } from 'primeng/button';
 import { MenuItem } from 'primeng/api';
 import { AuthService } from '@core/services/auth.service';
 import { Drawer } from 'primeng/drawer';
 import { signal } from '@angular/core';
+import { RouterModule } from '@angular/router';
+import { PrimeTemplate } from 'primeng/api';
 
 @Component({
   selector: 'sidebar',
   imports: [
-    RouterLink,
     Menu,
-    Button,
-    Drawer
+    Drawer,
+    RouterModule,
+    PrimeTemplate
   ],
   templateUrl: './sidebar.html'
 })

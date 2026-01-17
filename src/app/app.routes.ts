@@ -9,8 +9,9 @@ export const routes: Routes = [
   {
     path: 'dashboard',
     loadChildren: () => import('./features/dashboard/dashboard.routes').then(m => m.DASHBOARD_ROUTES),
-    //canActivate: [authGuard],}
-  },
+    canActivate: [authGuard],
+  }
+  ,
   {
     path: 'error',
     loadComponent: () => import('./features/error/pages/login-error/login-error').then(m => m.LoginError)

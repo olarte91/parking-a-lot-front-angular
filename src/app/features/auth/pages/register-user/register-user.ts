@@ -1,14 +1,11 @@
 import { Component } from '@angular/core';
 import { Card } from 'primeng/card';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
-import { Checkbox } from 'primeng/checkbox';
 import { Button } from 'primeng/button';
-import { Toast } from 'primeng/toast';
 import { Password } from 'primeng/password';
 import { IftaLabel } from 'primeng/iftalabel';
 import { InputText } from 'primeng/inputtext';
 import { AuthService } from '@core/services/auth.service';
-import { User } from '@core/models/user';
 import { RegisterResponse } from '@core/models/register-response';
 import { Router } from '@angular/router';
 import { MessageService } from 'primeng/api';
@@ -18,9 +15,7 @@ import { MessageService } from 'primeng/api';
   imports: [
     Card,
     ReactiveFormsModule,
-    Checkbox,
     Button,
-    Toast,
     Password,
     IftaLabel,
     InputText
