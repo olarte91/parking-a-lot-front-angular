@@ -1,4 +1,4 @@
-import { Component, signal } from '@angular/core';
+import { Component, inject, signal } from '@angular/core';
 import { InputText } from 'primeng/inputtext';
 import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Button } from 'primeng/button';
@@ -22,13 +22,15 @@ import { MessageService } from 'primeng/api';
 })
 export class LoginFormComponent {
 
+  private authService = inject(AuthService);
+  private formBuilder = inject(FormBuilder);
+  private router = inject(Router);
+  private messageService = inject(MessageService);
+
   visible: boolean = false;
   loginForm: FormGroup;
 
-  constructor(private formBuilder: FormBuilder,
-    private authService: AuthService,
-    private router: Router,
-    private messageService: MessageService) {
+  constructor() {
     this.loginForm = this.formBuilder.group({
       username: ['', [Validators.required]],
       password: ['', [Validators.required, Validators.minLength(6)]]

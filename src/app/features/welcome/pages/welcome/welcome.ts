@@ -1,18 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { Menu } from 'primeng/menu';
 import { MenuItem } from 'primeng/api';
-import { Menubar } from 'primeng/menubar';
-import { Avatar } from 'primeng/avatar';
-import { Badge } from 'primeng/badge';
-import { NgClass } from '@angular/common';
 
 @Component({
   selector: 'app-welcome',
   imports: [
-    Menubar,
-    Avatar,
-    Badge,
-    NgClass
   ],
   templateUrl: './welcome.html'
 })
